@@ -1,0 +1,21 @@
+{
+  "name": "gemini-live-chat",
+  "version": "1.0.0",
+  "description": "A web-based chat application using the Gemini Live API with configurable settings and a responsive design.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "gemini",
+    "chat",
+    "real-time",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}

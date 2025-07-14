@@ -1,0 +1,31 @@
+{
+    "model": "models/gemini-2.0-flash-exp",
+    "generationConfig": {
+        "temperature": 1.8,
+        "top_p": 0.95,
+        "top_k": 65,
+        "responseModalities": "audio"
+    },
+    "safetySettings": [
+        {
+            "category": "HARM_CATEGORY_HARASSMENT",
+            "threshold": "BLOCK_LOW_AND_ABOVE"
+        },
+        {
+            "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+            "threshold": "BLOCK_LOW_AND_ABOVE"
+        },
+        {
+            "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+            "threshold": "BLOCK_LOW_AND_ABOVE"
+        },
+        {
+            "category": "HARM_CATEGORY_HATE_SPEECH",
+            "threshold": "BLOCK_LOW_AND_ABOVE"
+        },
+        {
+            "category": "HARM_CATEGORY_CIVIC_INTEGRITY",
+            "threshold": "BLOCK_LOW_AND_ABOVE"
+        }
+    ]
+}
