@@ -30,7 +30,20 @@ app.get('/config', (req, res) => {
                 geminiApiKey: process.env.GEMINI_API_KEY,
                 deepgramApiKey: process.env.DEEPGRAM_API_KEY,
                 language: process.env.LANGUAGE || 'en-US',
-                textResponse: process.env.TEXT_RESPONSE === 'true'
+                textResponse: process.env.TEXT_RESPONSE === 'true',
+                model: process.env.MODEL || config.model,
+                modelSampleRate: process.env.SAMPLE_RATE || config.modelSampleRate,
+                generationConfig: {
+                    ...config.generationConfig,
+                    temperature: parseFloat(process.env.TEMPERATURE) || config.generationConfig.temperature,
+                    top_p: parseFloat(process.env.TOP_P) || config.generationConfig.top_p,
+                    top_k: parseInt(process.env.TOP_K) || config.generationConfig.top_k,
+                },
+                systemInstruction: {
+                    parts: [{
+                        text: process.env.SYSTEM_INSTRUCTIONS || config.systemInstruction.parts[0].text
+                    }]
+                }
             };
             res.json(fullConfig);
         } catch (error) {

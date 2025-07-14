@@ -53,5 +53,9 @@ export const getConfig = () => {
         geminiConfig.generationConfig.responseModalities = "text";
     }
 
+    if (config.systemInstruction) {
+        geminiConfig.systemInstruction = config.systemInstruction;
+    }
+
     return geminiConfig;
 };
